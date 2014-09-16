@@ -51,16 +51,16 @@ body {
   list-style-type: none;
 }
 
-.chart__item {
+.chart__item,
+.chart__item:link,
+.chart__item:visited {
   float: left;
   height: 16em;
   margin: 0 0.5%;
   position: relative;
   width: 7.3%;
-
   background-color: rgba(204, 204, 204, 0);
   transition: all 500ms linear;
-
 }
 
 .chart__item:hover,
@@ -69,29 +69,24 @@ body {
 	background-color: rgba(204, 204, 204, 0.4);
 }
 	
-
-.chart__link,
-.chart__link:link,
-.chart__link:visited {
+.chart__link {
   display: block;
-
   color: #e2e2e2;
   text-decoration: none;
-  transition: all 500ms linear;
 }
 
-.chart__link:hover,
-.chart__link:focus,
-.chart__link:active {
-	color: #fff;
-}
-
-.chart__label {
+.chart__label,
+.chart__label:link,
+.chart__label:visited {
   bottom: -1.7em;
   position: absolute;
   width: 100%;
-
   text-align: center;
+  transition: all 500ms linear;
+}
+
+.chart__item:hover .chart__label {
+	color:#fff;
 }
 
 .chart__bar-wrap {
@@ -112,9 +107,7 @@ body {
   transition: all 500ms linear;
 }
 
-.chart__bar:hover,
-.chart__bar:focus,
-.chart__bar:active {
+.chart__item:hover .chart__bar {
 	background-color: rgba(127, 219, 255, 1.0)
 }
 
@@ -127,12 +120,13 @@ body {
   top: -2em;
   width: 4.6em;
   z-index: 1;
-
+  
   background-color: #000;
   border-radius: 6px;
   opacity: 0;
 
   text-align: center;
+  transition: all 250ms linear;
 }
 
 .chart__count::after {
@@ -148,3 +142,9 @@ body {
   border-right: 10px solid transparent;
   border-top: 10px solid #000;
 }
+
+.chart__item:hover .chart__count {
+	top: -4em;
+	opacity: 1;
+}
+
